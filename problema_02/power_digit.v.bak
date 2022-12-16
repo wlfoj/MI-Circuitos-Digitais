@@ -1,0 +1,22 @@
+/*
+	Módulo para decidir de quem é cada vez de ascender
+*/
+module power_digit(count, display);
+	input [1:0] count;// saída do contador
+	output [3:0] display;// 4 digitos do display
+   
+	wire count0_Inv, count1_Inv;
+	
+	not Inv0(count0_Inv, count[0]);
+	not Inv1(count1_Inv, count[1]);
+	
+	// Saída digito 1
+	nand Nand1(display[0], count0_Inv, count1_Inv);
+	// Saída digito 2
+	nand Nand2(display[1], count0_Inv, count[1]);
+	// Saída digito 3
+	nand Nand3(display[2], count[0], count1_Inv);
+	// Saída digito 4
+	nand Nand4(display[3], count[0], count[1]);
+  
+endmodule

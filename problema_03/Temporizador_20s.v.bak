@@ -1,0 +1,24 @@
+module Temporizador_20s(pulse_20s, clock_1hz, EN);
+	input clock_1hz, EN;
+	output reg pulse_20s;
+	reg [4:0] count;
+
+	
+	initial begin
+		count = 5'b00000;
+	end
+
+	always @(posedge clock_1hz) begin
+		pulse_20s = 1'b0;
+		if (EN) begin
+			count = count + 5'b00001;
+			if (count == 5'b10100) begin //Se atingir a contagem de 20s, reinicia ou conta de 10s
+				count = 5'b00000;
+				pulse_20s = 1'b1;
+			end
+		end
+		else begin
+			count = 5'b00000;
+		end
+	end
+endmodule

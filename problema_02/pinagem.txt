@@ -1,0 +1,35 @@
+	clock - clk - PIN_12
+	
+	PARA AS CHAVES	
+	CH[7] - PIN_35
+	CH[6] - PIN_33
+	CH[5] - PIN_30
+	CH[4] - PIN_34
+	CH[3] - PIN_36
+	CH[2] - PIN_38
+	CH[1] - PIN_40
+	CH[0] - PIN_42
+
+	
+	PARA O DISPLAY
+	Display[3] - 7 SEG-D1 - PIN_88 é o da esquerda
+	Display[2] - 7 SEG-D2 - PIN_66
+	Display[1] - 7 SEG-D3 - PIN_68
+	Display[0] - 7 SEG-D4 - PIN_37 é o da direita
+	A - PIN_90
+	B - PIN_70
+	C - PIN_41
+	D - PIN_98
+	E - PIN_100
+	F - PIN_92
+	G - PIN_39
+	P - PIN_96
+	
+	
+	PARA A MATRIZ
+	Col[1] - PIN_82 - é a da esquerda
+	Col[0] - PIN_78 - é a da direita
+	Rows[3] - PIN_85 - é a linha de cima (a 1º)
+	Rows[2] - PIN_83 
+	Rows[1] - PIN_84
+	Rows[0] - PIN_87 - é a linha de baixo (ÚLTIMA)

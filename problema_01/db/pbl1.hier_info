@@ -1,0 +1,170 @@
+|module_main
+LEDs[0] << Buffer0.DB_MAX_OUTPUT_PORT_TYPE
+LEDs[1] << Buffer1.DB_MAX_OUTPUT_PORT_TYPE
+LEDs[2] << Buffer2.DB_MAX_OUTPUT_PORT_TYPE
+Display[0] << module_power_digit:circ_disp_on.Out
+Display[1] << module_power_digit:circ_disp_on.Out
+Display[2] << module_power_digit:circ_disp_on.Out
+Display[3] << module_power_digit:circ_disp_on.Out
+A << module_show_disp:circ_show_disp.port0
+B << module_show_disp:circ_show_disp.port1
+C << module_show_disp:circ_show_disp.port2
+D << module_show_disp:circ_show_disp.port3
+E << module_show_disp:circ_show_disp.port4
+F << module_show_disp:circ_show_disp.port5
+G << module_show_disp:circ_show_disp.port6
+P << module_show_disp:circ_show_disp.port7
+Input_D[0] => Input_D[0].IN1
+Input_D[1] => Input_D[1].IN1
+Input_D[2] => Input_D[2].IN1
+Input_D[3] => Input_D[3].IN1
+Input_R[0] => Input_R[0].IN1
+Input_R[1] => Input_R[1].IN1
+Input_R[2] => Input_R[2].IN1
+Input_R[3] => Input_R[3].IN1
+
+
+|module_main|module_sub:circ_sub
+Out[0] <= sub_half:circuito0.Out
+Out[1] <= sub_complete:circuito1.Out
+Out[2] <= sub_complete:circuito2.Out
+Out[3] <= sub_complete:circuito3.Out
+Out[4] <= sub_complete:circuito3.Carry_Out
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+
+
+|module_main|module_sub:circ_sub|sub_half:circuito0
+Out <= Xor0.DB_MAX_OUTPUT_PORT_TYPE
+Carry_Out <= And0.DB_MAX_OUTPUT_PORT_TYPE
+A => Xor0.IN0
+A => And0.IN0
+B => Xor0.IN1
+B => And0.IN1
+
+
+|module_main|module_sub:circ_sub|sub_complete:circuito1
+Out <= Xor1.DB_MAX_OUTPUT_PORT_TYPE
+Carry_Out <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+A => Xor0.IN0
+A => And0.IN0
+A => And1.IN0
+B => Xor0.IN1
+B => And0.IN1
+B => And2.IN0
+Carry_In => Xor1.IN1
+Carry_In => And1.IN1
+Carry_In => And2.IN1
+
+
+|module_main|module_sub:circ_sub|sub_complete:circuito2
+Out <= Xor1.DB_MAX_OUTPUT_PORT_TYPE
+Carry_Out <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+A => Xor0.IN0
+A => And0.IN0
+A => And1.IN0
+B => Xor0.IN1
+B => And0.IN1
+B => And2.IN0
+Carry_In => Xor1.IN1
+Carry_In => And1.IN1
+Carry_In => And2.IN1
+
+
+|module_main|module_sub:circ_sub|sub_complete:circuito3
+Out <= Xor1.DB_MAX_OUTPUT_PORT_TYPE
+Carry_Out <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+A => Xor0.IN0
+A => And0.IN0
+A => And1.IN0
+B => Xor0.IN1
+B => And0.IN1
+B => And2.IN0
+Carry_In => Xor1.IN1
+Carry_In => And1.IN1
+Carry_In => And2.IN1
+
+
+|module_main|module_signa:circ_signal
+LED[0] <= And06.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= Or01.DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= And05.DB_MAX_OUTPUT_PORT_TYPE
+In[0] => And00.IN0
+In[0] => And03.IN0
+In[0] => And06.IN0
+In[1] => And01.IN0
+In[1] => And02.IN0
+In[1] => And06.IN1
+In[2] => And02.IN1
+In[2] => And03.IN1
+In[2] => And06.IN2
+In[2] => And00.IN1
+In[2] => And01.IN1
+In[3] => And02.IN2
+In[3] => And03.IN2
+In[3] => And06.IN3
+In[3] => And00.IN2
+In[3] => And01.IN2
+In[4] => And02.IN3
+In[4] => And03.IN3
+In[4] => And06.IN4
+In[4] => And00.IN3
+In[4] => And01.IN3
+
+
+|module_main|module_power_digit:circ_disp_on
+Out[0] <= BufferD0.DB_MAX_OUTPUT_PORT_TYPE
+Out[1] <= BufferD1.DB_MAX_OUTPUT_PORT_TYPE
+Out[2] <= BufferD2.DB_MAX_OUTPUT_PORT_TYPE
+Out[3] <= BufferD3.DB_MAX_OUTPUT_PORT_TYPE
+LED_R => LED_R.IN1
+
+
+|module_main|module_power_digit:circ_disp_on|ever_high:circ_out_high
+Out <= <VCC>
+In => ~NO_FANOUT~
+
+
+|module_main|module_show_disp:circ_show_disp
+A <= Or1A.DB_MAX_OUTPUT_PORT_TYPE
+B <= <GND>
+C <= Or1C.DB_MAX_OUTPUT_PORT_TYPE
+D <= Or1D.DB_MAX_OUTPUT_PORT_TYPE
+E <= Or1E.DB_MAX_OUTPUT_PORT_TYPE
+F <= Or1F.DB_MAX_OUTPUT_PORT_TYPE
+G <= Or1G.DB_MAX_OUTPUT_PORT_TYPE
+P <= In[4].DB_MAX_OUTPUT_PORT_TYPE
+In[0] => And01.IN0
+In[0] => And02.IN0
+In[0] => Or1E.DATAIN
+In[0] => And1F.IN0
+In[0] => And08.IN0
+In[0] => And03.IN0
+In[0] => And04.IN0
+In[0] => And3F.IN0
+In[1] => And02.IN1
+In[1] => And03.IN1
+In[1] => And04.IN1
+In[1] => And3F.IN1
+In[1] => And08.IN1
+In[1] => And01.IN1
+In[1] => And07.IN0
+In[2] => ~NO_FANOUT~
+In[3] => And04.IN2
+In[3] => And2F.IN0
+In[4] => And02.IN2
+In[4] => And2F.IN1
+In[4] => And08.IN2
+In[4] => And01.IN2
+In[4] => And03.IN2
+In[4] => And1F.IN1
+In[4] => And07.IN1
+In[4] => P.DATAIN
+
+

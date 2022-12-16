@@ -1,0 +1,10 @@
+/*
+	Módulo sair as vagas ocupadas
+*/
+module occupied(CH, S);
+	input [7:0] CH;// qualquer entrada
+	output [4:0] S;// 4 digitos do display
+   
+
+  
+endmodule

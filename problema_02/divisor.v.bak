@@ -1,0 +1,21 @@
+module divisor(clock, saida);
+	input clock;
+	output reg [1:0] saida;
+	reg [18:0] Out;
+
+	
+	initial begin
+		saida = 2'b00;
+		Out = 19'b0000000000000000000;
+	end
+
+	always @(posedge clock)
+	begin
+		Out = Out + 19'b0000000000000000001;
+			if(Out[18] == 1'b1)
+				begin
+					saida = saida + 2'b01;
+				end
+		end
+
+endmodule

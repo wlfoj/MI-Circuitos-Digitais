@@ -1,0 +1,769 @@
+Timing Analyzer report for p3
+Fri Dec 16 18:27:23 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'Primeiro_Divisor:divisor_c|Out[20]'
+ 12. Setup: 'CLK_FPGA'
+ 13. Hold: 'CLK_FPGA'
+ 14. Hold: 'Primeiro_Divisor:divisor_c|Out[20]'
+ 15. Setup Transfers
+ 16. Hold Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths Summary
+ 20. Clock Status Summary
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; p3                                                  ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.4%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                 ;
++------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------+
+; Clock Name                         ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                ;
++------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------+
+; CLK_FPGA                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK_FPGA }                           ;
+; Primeiro_Divisor:divisor_c|Out[20] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Primeiro_Divisor:divisor_c|Out[20] } ;
++------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Fmax Summary                                                             ;
++------------+-----------------+------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                         ; Note ;
++------------+-----------------+------------------------------------+------+
+; 107.81 MHz ; 107.81 MHz      ; Primeiro_Divisor:divisor_c|Out[20] ;      ;
+; 139.86 MHz ; 139.86 MHz      ; CLK_FPGA                           ;      ;
++------------+-----------------+------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------+
+; Setup Summary                                               ;
++------------------------------------+--------+---------------+
+; Clock                              ; Slack  ; End Point TNS ;
++------------------------------------+--------+---------------+
+; Primeiro_Divisor:divisor_c|Out[20] ; -8.276 ; -159.923      ;
+; CLK_FPGA                           ; -7.121 ; -360.514      ;
++------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------+
+; Hold Summary                                                ;
++------------------------------------+--------+---------------+
+; Clock                              ; Slack  ; End Point TNS ;
++------------------------------------+--------+---------------+
+; CLK_FPGA                           ; -2.065 ; -2.065        ;
+; Primeiro_Divisor:divisor_c|Out[20] ; 1.641  ; 0.000         ;
++------------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-------------------------------------------------------------+
+; Minimum Pulse Width Summary                                 ;
++------------------------------------+--------+---------------+
+; Clock                              ; Slack  ; End Point TNS ;
++------------------------------------+--------+---------------+
+; CLK_FPGA                           ; -2.289 ; -2.289        ;
+; Primeiro_Divisor:divisor_c|Out[20] ; 0.234  ; 0.000         ;
++------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Primeiro_Divisor:divisor_c|Out[20]'                                                                                                                                                    ;
++--------+---------------------------------+----------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                          ; Launch Clock                       ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+----------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; -8.276 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.943      ;
+; -8.276 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.943      ;
+; -8.275 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.942      ;
+; -8.274 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.941      ;
+; -8.219 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.886      ;
+; -8.219 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.886      ;
+; -8.218 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.885      ;
+; -8.217 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.884      ;
+; -8.131 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.798      ;
+; -8.131 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.798      ;
+; -8.130 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.797      ;
+; -8.129 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.796      ;
+; -7.843 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.510      ;
+; -7.842 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.509      ;
+; -7.841 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.508      ;
+; -7.840 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.507      ;
+; -7.835 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.502      ;
+; -7.835 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.502      ;
+; -7.786 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.453      ;
+; -7.785 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.452      ;
+; -7.784 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.451      ;
+; -7.783 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.450      ;
+; -7.778 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.445      ;
+; -7.778 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.445      ;
+; -7.744 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.411      ;
+; -7.744 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.411      ;
+; -7.743 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.410      ;
+; -7.742 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.409      ;
+; -7.698 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.365      ;
+; -7.697 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.364      ;
+; -7.696 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.363      ;
+; -7.695 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.362      ;
+; -7.690 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.357      ;
+; -7.690 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.357      ;
+; -7.601 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.268      ;
+; -7.601 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.268      ;
+; -7.600 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.267      ;
+; -7.599 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.266      ;
+; -7.587 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.254      ;
+; -7.587 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.254      ;
+; -7.586 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.253      ;
+; -7.585 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.252      ;
+; -7.541 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.208      ;
+; -7.541 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.208      ;
+; -7.540 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.207      ;
+; -7.539 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.206      ;
+; -7.505 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.172      ;
+; -7.505 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.172      ;
+; -7.504 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.171      ;
+; -7.503 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.170      ;
+; -7.441 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.108      ;
+; -7.441 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.108      ;
+; -7.440 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.107      ;
+; -7.439 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 8.106      ;
+; -7.325 ; Temporizador_20s:timer|count[0] ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.992      ;
+; -7.311 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.978      ;
+; -7.310 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.977      ;
+; -7.309 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.976      ;
+; -7.308 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.975      ;
+; -7.303 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.970      ;
+; -7.303 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.970      ;
+; -7.268 ; Temporizador_20s:timer|count[2] ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.935      ;
+; -7.180 ; Temporizador_20s:timer|count[1] ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.847      ;
+; -7.168 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.835      ;
+; -7.167 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.834      ;
+; -7.166 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.833      ;
+; -7.165 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.832      ;
+; -7.160 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.827      ;
+; -7.160 ; Temporizador_20s:timer|count[5] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.827      ;
+; -7.154 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.821      ;
+; -7.153 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.820      ;
+; -7.152 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.819      ;
+; -7.151 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.818      ;
+; -7.146 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.813      ;
+; -7.146 ; Temporizador_20s:timer|count[7] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.813      ;
+; -7.108 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.775      ;
+; -7.107 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.774      ;
+; -7.106 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.773      ;
+; -7.105 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.772      ;
+; -7.100 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.767      ;
+; -7.100 ; Temporizador_20s:timer|count[4] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.767      ;
+; -7.072 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.739      ;
+; -7.071 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.738      ;
+; -7.070 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.737      ;
+; -7.069 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.736      ;
+; -7.064 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; Temporizador_20s:timer|count[8] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.731      ;
+; -7.008 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.675      ;
+; -7.007 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.674      ;
+; -7.006 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.673      ;
+; -7.005 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.672      ;
+; -7.000 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.667      ;
+; -7.000 ; Temporizador_20s:timer|count[3] ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.667      ;
+; -6.854 ; Temporizador_20s:timer|count[9] ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.521      ;
+; -6.854 ; Temporizador_20s:timer|count[9] ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.521      ;
+; -6.853 ; Temporizador_20s:timer|count[9] ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.520      ;
+; -6.852 ; Temporizador_20s:timer|count[9] ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.519      ;
+; -6.793 ; Temporizador_20s:timer|count[6] ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.460      ;
+; -6.715 ; MEF_Senha_DEBUG:mef2|state.S1   ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.382      ;
+; -6.658 ; LevelToPulseMoore:l2|state.B    ; MEF_Senha_DEBUG:mef2|state.S2    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1.000        ; 0.000      ; 7.325      ;
++--------+---------------------------------+----------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK_FPGA'                                                                                                                                                                  ;
++--------+----------------------------------+--------------------------------------------+------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                                    ; Launch Clock                       ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+--------------------------------------------+------------------------------------+-------------+--------------+------------+------------+
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.121 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.068      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -7.090 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 6.037      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.791 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.738      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.766 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.713      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.760 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.707      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.735 ; MEF_Senha_DEBUG:mef2|state.S1    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.682      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.610 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.557      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.579 ; MEF_Principal_DEBUG:mef1|state.P ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.526      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.489 ; MEF_Senha_DEBUG:mef2|state.S2    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.436      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.422 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.369      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.391 ; MEF_Senha_DEBUG:mef2|state.S4    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18] ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.338      ;
+; -6.159 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.106      ;
+; -6.159 ; MEF_Senha_DEBUG:mef2|state.S3    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 1.000        ; -1.720     ; 5.106      ;
++--------+----------------------------------+--------------------------------------------+------------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK_FPGA'                                                                                                                                                                                 ;
++--------+----------------------------------------------+----------------------------------------------+------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock                       ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+------------------------------------+-------------+--------------+------------+------------+
+; -2.065 ; Primeiro_Divisor:divisor_c|Out[20]           ; Primeiro_Divisor:divisor_c|Out[20]           ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; 0.000        ; 3.348      ; 1.880      ;
+; -1.565 ; Primeiro_Divisor:divisor_c|Out[20]           ; Primeiro_Divisor:divisor_c|Out[20]           ; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA    ; -0.500       ; 3.348      ; 1.880      ;
+; 1.640  ; Primeiro_Divisor:divisor_c|Out[0]            ; Primeiro_Divisor:divisor_c|Out[0]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 1.861      ;
+; 1.944  ; Divisor_Frequencia:divisor_freq|clock_div[1] ; Divisor_Frequencia:divisor_freq|clock_div[1] ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.165      ;
+; 2.108  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[5]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[5]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.329      ;
+; 2.116  ; Primeiro_Divisor:divisor_c|Out[11]           ; Primeiro_Divisor:divisor_c|Out[11]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; Primeiro_Divisor:divisor_c|Out[1]            ; Primeiro_Divisor:divisor_c|Out[1]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; Primeiro_Divisor:divisor_c|Out[18]           ; Primeiro_Divisor:divisor_c|Out[18]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Primeiro_Divisor:divisor_c|Out[8]            ; Primeiro_Divisor:divisor_c|Out[8]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[7]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[7]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[0]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[0]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.125  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126  ; Primeiro_Divisor:divisor_c|Out[13]           ; Primeiro_Divisor:divisor_c|Out[13]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Primeiro_Divisor:divisor_c|Out[12]           ; Primeiro_Divisor:divisor_c|Out[12]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Primeiro_Divisor:divisor_c|Out[10]           ; Primeiro_Divisor:divisor_c|Out[10]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Primeiro_Divisor:divisor_c|Out[3]            ; Primeiro_Divisor:divisor_c|Out[3]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; Primeiro_Divisor:divisor_c|Out[2]            ; Primeiro_Divisor:divisor_c|Out[2]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.137  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[25]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.358      ;
+; 2.212  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221  ; Primeiro_Divisor:divisor_c|Out[19]           ; Primeiro_Divisor:divisor_c|Out[19]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; Primeiro_Divisor:divisor_c|Out[14]           ; Primeiro_Divisor:divisor_c|Out[14]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; Primeiro_Divisor:divisor_c|Out[9]            ; Primeiro_Divisor:divisor_c|Out[9]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; Primeiro_Divisor:divisor_c|Out[4]            ; Primeiro_Divisor:divisor_c|Out[4]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; Primeiro_Divisor:divisor_c|Out[16]           ; Primeiro_Divisor:divisor_c|Out[16]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; Primeiro_Divisor:divisor_c|Out[6]            ; Primeiro_Divisor:divisor_c|Out[6]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[3]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[3]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Primeiro_Divisor:divisor_c|Out[17]           ; Primeiro_Divisor:divisor_c|Out[17]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Primeiro_Divisor:divisor_c|Out[15]           ; Primeiro_Divisor:divisor_c|Out[15]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Primeiro_Divisor:divisor_c|Out[7]            ; Primeiro_Divisor:divisor_c|Out[7]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Primeiro_Divisor:divisor_c|Out[5]            ; Primeiro_Divisor:divisor_c|Out[5]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[6]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[6]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[4]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[4]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[2]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[2]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[1]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[1]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.274  ; Divisor_Frequencia:divisor_freq|clock_div[0] ; Divisor_Frequencia:divisor_freq|clock_div[0] ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.495      ;
+; 2.283  ; Divisor_Frequencia:divisor_freq|clock_div[0] ; Divisor_Frequencia:divisor_freq|clock_div[1] ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.504      ;
+; 2.587  ; Primeiro_Divisor:divisor_c|Out[0]            ; Primeiro_Divisor:divisor_c|Out[1]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 2.808      ;
+; 2.940  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[5]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[6]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.161      ;
+; 2.948  ; Primeiro_Divisor:divisor_c|Out[11]           ; Primeiro_Divisor:divisor_c|Out[12]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; Primeiro_Divisor:divisor_c|Out[1]            ; Primeiro_Divisor:divisor_c|Out[2]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949  ; Primeiro_Divisor:divisor_c|Out[18]           ; Primeiro_Divisor:divisor_c|Out[19]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[16]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; Primeiro_Divisor:divisor_c|Out[8]            ; Primeiro_Divisor:divisor_c|Out[9]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[0]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[1]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.957  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.178      ;
+; 2.958  ; Primeiro_Divisor:divisor_c|Out[13]           ; Primeiro_Divisor:divisor_c|Out[14]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; Primeiro_Divisor:divisor_c|Out[12]           ; Primeiro_Divisor:divisor_c|Out[13]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; Primeiro_Divisor:divisor_c|Out[3]            ; Primeiro_Divisor:divisor_c|Out[4]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; Primeiro_Divisor:divisor_c|Out[2]            ; Primeiro_Divisor:divisor_c|Out[3]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.179      ;
+; 3.051  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[5]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[7]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.272      ;
+; 3.059  ; Primeiro_Divisor:divisor_c|Out[11]           ; Primeiro_Divisor:divisor_c|Out[13]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; Primeiro_Divisor:divisor_c|Out[1]            ; Primeiro_Divisor:divisor_c|Out[3]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060  ; Primeiro_Divisor:divisor_c|Out[18]           ; Primeiro_Divisor:divisor_c|Out[20]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[15]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[17]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; Primeiro_Divisor:divisor_c|Out[8]            ; Primeiro_Divisor:divisor_c|Out[10]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[0]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[2]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[19]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.068  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[18]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[20]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.289      ;
+; 3.069  ; Primeiro_Divisor:divisor_c|Out[13]           ; Primeiro_Divisor:divisor_c|Out[15]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[10]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[12]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; Primeiro_Divisor:divisor_c|Out[3]            ; Primeiro_Divisor:divisor_c|Out[5]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; Primeiro_Divisor:divisor_c|Out[12]           ; Primeiro_Divisor:divisor_c|Out[14]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[9]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; Primeiro_Divisor:divisor_c|Out[2]            ; Primeiro_Divisor:divisor_c|Out[4]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.115  ; Divisor_Frequencia:divisor_freq|Out[9]       ; Divisor_Frequencia:divisor_freq|Out[9]       ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.336      ;
+; 3.152  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[21]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[22]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161  ; Primeiro_Divisor:divisor_c|Out[19]           ; Primeiro_Divisor:divisor_c|Out[20]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; Primeiro_Divisor:divisor_c|Out[9]            ; Primeiro_Divisor:divisor_c|Out[10]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; Primeiro_Divisor:divisor_c|Out[14]           ; Primeiro_Divisor:divisor_c|Out[15]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; Primeiro_Divisor:divisor_c|Out[4]            ; Primeiro_Divisor:divisor_c|Out[5]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[23]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[24]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Primeiro_Divisor:divisor_c|Out[16]           ; Primeiro_Divisor:divisor_c|Out[17]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[13]   ; Divisor_Frequencia_1Hz:divisor_1hz|Out[14]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Primeiro_Divisor:divisor_c|Out[6]            ; Primeiro_Divisor:divisor_c|Out[7]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[3]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[4]    ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Primeiro_Divisor:divisor_c|Out[11]           ; Primeiro_Divisor:divisor_c|Out[14]           ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Divisor_Frequencia_1Hz:divisor_1hz|Out[8]    ; Divisor_Frequencia_1Hz:divisor_1hz|Out[11]   ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; Primeiro_Divisor:divisor_c|Out[1]            ; Primeiro_Divisor:divisor_c|Out[4]            ; CLK_FPGA                           ; CLK_FPGA    ; 0.000        ; 0.000      ; 3.391      ;
++--------+----------------------------------------------+----------------------------------------------+------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Primeiro_Divisor:divisor_c|Out[20]'                                                                                                                                                     ;
++-------+----------------------------------+----------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock                       ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; 1.641 ; LevelToPulseMoore:l0|state.A     ; LevelToPulseMoore:l0|state.B     ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 1.862      ;
+; 1.641 ; LevelToPulseMoore:l1|state.A     ; LevelToPulseMoore:l1|state.B     ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 1.862      ;
+; 1.646 ; LevelToPulseMoore:l2|state.A     ; LevelToPulseMoore:l2|state.B     ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 1.867      ;
+; 1.676 ; MEF_Principal_DEBUG:mef1|state.P ; MEF_Principal_DEBUG:mef1|state.P ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 1.897      ;
+; 1.904 ; LevelToPulseMoore:l3|state.A     ; LevelToPulseMoore:l3|state.B     ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.125      ;
+; 2.144 ; MEF_Senha_DEBUG:mef2|state.OK    ; MEF_Senha_DEBUG:mef2|state.OK    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.365      ;
+; 2.146 ; MEF_Senha_DEBUG:mef2|state.S4    ; MEF_Senha_DEBUG:mef2|state.S4    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.367      ;
+; 2.204 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Principal_DEBUG:mef1|state.E ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.425      ;
+; 2.208 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.S0    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.429      ;
+; 2.212 ; MEF_Senha_DEBUG:mef2|state.IN    ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.433      ;
+; 2.235 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Principal_DEBUG:mef1|state.S ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.456      ;
+; 2.251 ; MEF_Senha_DEBUG:mef2|state.S1    ; MEF_Senha_DEBUG:mef2|state.S1    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.472      ;
+; 2.275 ; MEF_Principal_DEBUG:mef1|state.A ; MEF_Principal_DEBUG:mef1|state.C ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.496      ;
+; 2.275 ; MEF_Principal_DEBUG:mef1|state.A ; MEF_Principal_DEBUG:mef1|state.A ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.496      ;
+; 2.322 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.S0    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.543      ;
+; 2.341 ; MEF_Senha_DEBUG:mef2|state.S3    ; MEF_Senha_DEBUG:mef2|state.S3    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.562      ;
+; 2.376 ; MEF_Principal_DEBUG:mef1|state.A ; MEF_Principal_DEBUG:mef1|state.P ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.597      ;
+; 2.383 ; MEF_Principal_DEBUG:mef1|state.P ; MEF_Principal_DEBUG:mef1|state.I ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.604      ;
+; 2.390 ; MEF_Principal_DEBUG:mef1|state.P ; MEF_Principal_DEBUG:mef1|state.C ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.611      ;
+; 2.711 ; MEF_Principal_DEBUG:mef1|state.I ; MEF_Principal_DEBUG:mef1|state.I ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.932      ;
+; 2.756 ; MEF_Senha_DEBUG:mef2|state.ER    ; MEF_Senha_DEBUG:mef2|state.S0    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 2.977      ;
+; 2.948 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Principal_DEBUG:mef1|state.E ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.169      ;
+; 2.955 ; MEF_Senha_DEBUG:mef2|state.S4    ; MEF_Senha_DEBUG:mef2|state.OK    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.176      ;
+; 3.130 ; MEF_Senha_DEBUG:mef2|state.OK    ; MEF_Principal_DEBUG:mef1|state.A ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.351      ;
+; 3.166 ; MEF_Senha_DEBUG:mef2|state.S0    ; MEF_Senha_DEBUG:mef2|state.S1    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.387      ;
+; 3.182 ; MEF_Senha_DEBUG:mef2|state.IN    ; MEF_Principal_DEBUG:mef1|state.E ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.403      ;
+; 3.241 ; MEF_Senha_DEBUG:mef2|state.S1    ; MEF_Senha_DEBUG:mef2|state.S2    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.462      ;
+; 3.267 ; MEF_Principal_DEBUG:mef1|state.I ; MEF_Principal_DEBUG:mef1|state.S ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.488      ;
+; 3.404 ; MEF_Senha_DEBUG:mef2|state.ER    ; MEF_Principal_DEBUG:mef1|state.E ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.625      ;
+; 3.471 ; MEF_Principal_DEBUG:mef1|state.A ; MEF_Principal_DEBUG:mef1|state.I ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.692      ;
+; 3.517 ; MEF_Senha_DEBUG:mef2|state.OK    ; MEF_Principal_DEBUG:mef1|state.S ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.738      ;
+; 3.524 ; MEF_Senha_DEBUG:mef2|state.OK    ; MEF_Principal_DEBUG:mef1|state.E ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.745      ;
+; 3.590 ; Temporizador_20s:timer|pulse_20s ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.811      ;
+; 3.719 ; MEF_Senha_DEBUG:mef2|state.IN    ; MEF_Principal_DEBUG:mef1|state.S ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 3.940      ;
+; 3.828 ; MEF_Senha_DEBUG:mef2|state.S3    ; MEF_Senha_DEBUG:mef2|state.S4    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.049      ;
+; 3.987 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.S2    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.208      ;
+; 4.039 ; MEF_Senha_DEBUG:mef2|state.ER    ; MEF_Principal_DEBUG:mef1|state.S ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.260      ;
+; 4.072 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.293      ;
+; 4.073 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.294      ;
+; 4.092 ; MEF_Senha_DEBUG:mef2|state.S4    ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.313      ;
+; 4.240 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.S1    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.461      ;
+; 4.288 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Principal_DEBUG:mef1|state.A ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.509      ;
+; 4.363 ; MEF_Senha_DEBUG:mef2|state.S1    ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.584      ;
+; 4.372 ; Temporizador_20s:timer|count[2]  ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.593      ;
+; 4.385 ; LevelToPulseMoore:l2|state.B     ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.606      ;
+; 4.398 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.OK    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.619      ;
+; 4.504 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.S2    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.725      ;
+; 4.515 ; Temporizador_20s:timer|count[1]  ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.736      ;
+; 4.534 ; Temporizador_20s:timer|count[0]  ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.755      ;
+; 4.545 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.S4    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.766      ;
+; 4.556 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Senha_DEBUG:mef2|state.S3    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.777      ;
+; 4.605 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.826      ;
+; 4.606 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.827      ;
+; 4.635 ; Temporizador_20s:timer|count[4]  ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.856      ;
+; 4.660 ; Temporizador_20s:timer|pulse_20s ; MEF_Senha_DEBUG:mef2|state.S3    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.881      ;
+; 4.664 ; Temporizador_20s:timer|pulse_20s ; MEF_Senha_DEBUG:mef2|state.S1    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.885      ;
+; 4.672 ; Temporizador_20s:timer|pulse_20s ; MEF_Senha_DEBUG:mef2|state.S4    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.893      ;
+; 4.673 ; Temporizador_20s:timer|pulse_20s ; MEF_Senha_DEBUG:mef2|state.S2    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.894      ;
+; 4.677 ; MEF_Senha_DEBUG:mef2|state.S4    ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.898      ;
+; 4.678 ; MEF_Senha_DEBUG:mef2|state.S4    ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.899      ;
+; 4.680 ; MEF_Senha_DEBUG:mef2|state.S4    ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.901      ;
+; 4.773 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.S1    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 4.994      ;
+; 4.789 ; Temporizador_20s:timer|count[3]  ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.010      ;
+; 4.821 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Principal_DEBUG:mef1|state.A ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.042      ;
+; 4.857 ; MEF_Senha_DEBUG:mef2|state.S2    ; MEF_Senha_DEBUG:mef2|state.S3    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.078      ;
+; 4.858 ; LevelToPulseMoore:l0|state.B     ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.079      ;
+; 4.861 ; LevelToPulseMoore:l0|state.B     ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.082      ;
+; 4.931 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.OK    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.152      ;
+; 5.022 ; LevelToPulseMoore:l3|state.B     ; MEF_Senha_DEBUG:mef2|state.OK    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.243      ;
+; 5.025 ; Temporizador_20s:timer|count[1]  ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.246      ;
+; 5.061 ; LevelToPulseMoore:l3|state.B     ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.282      ;
+; 5.064 ; LevelToPulseMoore:l3|state.B     ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.285      ;
+; 5.078 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.S4    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.299      ;
+; 5.089 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Senha_DEBUG:mef2|state.S3    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.310      ;
+; 5.158 ; Temporizador_20s:timer|count[0]  ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.379      ;
+; 5.168 ; MEF_Principal_DEBUG:mef1|state.S ; MEF_Principal_DEBUG:mef1|state.I ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.389      ;
+; 5.178 ; LevelToPulseMoore:l1|state.B     ; MEF_Senha_DEBUG:mef2|state.ER    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.399      ;
+; 5.195 ; LevelToPulseMoore:l3|state.B     ; MEF_Senha_DEBUG:mef2|state.S2    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.416      ;
+; 5.237 ; Temporizador_20s:timer|count[3]  ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.458      ;
+; 5.266 ; Temporizador_20s:timer|count[8]  ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.487      ;
+; 5.339 ; MEF_Principal_DEBUG:mef1|state.E ; MEF_Principal_DEBUG:mef1|state.I ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.560      ;
+; 5.344 ; Temporizador_20s:timer|count[0]  ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.565      ;
+; 5.364 ; Temporizador_20s:timer|count[6]  ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.585      ;
+; 5.369 ; Temporizador_20s:timer|count[7]  ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.590      ;
+; 5.384 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.605      ;
+; 5.387 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[7]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.608      ;
+; 5.389 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[3]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.610      ;
+; 5.394 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.615      ;
+; 5.400 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[2]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.621      ;
+; 5.400 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[1]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.621      ;
+; 5.412 ; Temporizador_20s:timer|count[5]  ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.633      ;
+; 5.422 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[6]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.643      ;
+; 5.425 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[9]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.646      ;
+; 5.426 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[8]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.647      ;
+; 5.426 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|pulse_20s ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.647      ;
+; 5.441 ; Temporizador_20s:timer|count[8]  ; Temporizador_20s:timer|count[5]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.662      ;
+; 5.443 ; MEF_Senha_DEBUG:mef2|state.S3    ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.664      ;
+; 5.478 ; LevelToPulseMoore:l1|state.B     ; MEF_Senha_DEBUG:mef2|state.IN    ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.699      ;
+; 5.479 ; Temporizador_20s:timer|count[1]  ; Temporizador_20s:timer|count[4]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.700      ;
+; 5.539 ; MEF_Senha_DEBUG:mef2|state.S4    ; Temporizador_20s:timer|count[0]  ; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 0.000        ; 0.000      ; 5.760      ;
++-------+----------------------------------+----------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                     ;
++------------------------------------+------------------------------------+----------+----------+----------+----------+
+; From Clock                         ; To Clock                           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------+------------------------------------+----------+----------+----------+----------+
+; CLK_FPGA                           ; CLK_FPGA                           ; 1686     ; 0        ; 0        ; 0        ;
+; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA                           ; 131      ; 1        ; 0        ; 0        ;
+; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1320     ; 0        ; 0        ; 0        ;
++------------------------------------+------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                      ;
++------------------------------------+------------------------------------+----------+----------+----------+----------+
+; From Clock                         ; To Clock                           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------+------------------------------------+----------+----------+----------+----------+
+; CLK_FPGA                           ; CLK_FPGA                           ; 1686     ; 0        ; 0        ; 0        ;
+; Primeiro_Divisor:divisor_c|Out[20] ; CLK_FPGA                           ; 131      ; 1        ; 0        ; 0        ;
+; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; 1320     ; 0        ; 0        ; 0        ;
++------------------------------------+------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 19    ; 19   ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 61    ; 61   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                         ;
++------------------------------------+------------------------------------+------+-------------+
+; Target                             ; Clock                              ; Type ; Status      ;
++------------------------------------+------------------------------------+------+-------------+
+; CLK_FPGA                           ; CLK_FPGA                           ; Base ; Constrained ;
+; Primeiro_Divisor:divisor_c|Out[20] ; Primeiro_Divisor:divisor_c|Out[20] ; Base ; Constrained ;
++------------------------------------+------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Btn[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Btn[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Btn[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Btn[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Sc         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Se         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Si         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                           ;
++--------------+---------------------------------------------------------------------------------------+
+; Output Port  ; Comment                                                                               ;
++--------------+---------------------------------------------------------------------------------------+
+; Cancela      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DIGITE_SENHA ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RGB[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RGB[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RGB[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Btn[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Btn[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Btn[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Btn[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Sc         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Se         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Si         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                           ;
++--------------+---------------------------------------------------------------------------------------+
+; Output Port  ; Comment                                                                               ;
++--------------+---------------------------------------------------------------------------------------+
+; Cancela      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DIGITE_SENHA ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Digitos[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RGB[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RGB[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RGB[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segmentos[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Dec 16 18:27:10 2022
+Info: Command: quartus_sta p3 -c p3
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'p3.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Primeiro_Divisor:divisor_c|Out[20] Primeiro_Divisor:divisor_c|Out[20]
+    Info (332105): create_clock -period 1.000 -name CLK_FPGA CLK_FPGA
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -8.276
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -8.276            -159.923 Primeiro_Divisor:divisor_c|Out[20] 
+    Info (332119):    -7.121            -360.514 CLK_FPGA 
+Info (332146): Worst-case hold slack is -2.065
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.065              -2.065 CLK_FPGA 
+    Info (332119):     1.641               0.000 Primeiro_Divisor:divisor_c|Out[20] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK_FPGA 
+    Info (332119):     0.234               0.000 Primeiro_Divisor:divisor_c|Out[20] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4667 megabytes
+    Info: Processing ended: Fri Dec 16 18:27:23 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:09
+
+

@@ -1,0 +1,12 @@
+module control_matriz(Row_Out, Col_Out, Row_In, CH);
+	input [7:0] CH;As chaves
+	input [3:0] Row_In;
+	output [3:0] Row_Out;
+	output [1:0] Col_Out;
+   
+	wire In_Inv;
+	
+	not Inv1(In_Inv, In);
+	and And1(Low, In, In_Inv);
+  
+endmodule

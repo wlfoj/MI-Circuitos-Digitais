@@ -1,0 +1,21 @@
+/*
+	Módulo para decidir de quem é cada vez de ascender no display
+	
+	Ele pega a vez indicada pelo 1 e inverte, pois o display ascende com o 0
+	
+	Chegando 1000 do indica vez (oq seria acionar primeiro digito)
+	vai sair 0111, para acionar o primeiro digito
+*/
+module Turn_On_Digit(digit, indicador, ON);
+	input [3:0] indicador;
+	input ON;
+	output [3:0] digit;
+	
+  	// Se ON for 0, todos digitos ficam em nivel ALTO (Apagados)
+  	assign digit[0] = ~indicador[0] | ~ON;
+  	assign digit[1] = ~indicador[1] | ~ON;
+  	assign digit[2] = ~indicador[2] | ~ON;
+  	assign digit[3] = ~indicador[3] | ~ON;
+	
+  
+endmodule 

@@ -1,0 +1,21 @@
+module mux(Out, Ctl, Occ, Liv, L, O);
+	input [3:0] Occ, Liv, L, O, Ctl;// clock
+	output reg [3:0] Out;//saída
+   
+	// Começa com os valores zerados
+	initial begin
+		Out = 4'b0000;
+	end
+  
+	// Sempre na borda de subida do clock
+	always @(*) 
+		begin
+			case(Ctl)
+			4'b0001 : Out = O;
+			4'b0010 : Out = Occ;
+			4'b0100 : Out = L;
+			4'b1000 : Out = Liv;
+			default : Out = O;
+		end
+  
+endmodule

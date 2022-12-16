@@ -1,0 +1,151 @@
+/*
+*/
+
+module MEF_Senha_DEBUG ( INATIVO, CERTO, ERRO, S_INATI,// Saídas
+						 clk, COD, EN, TEMP_INATI, EM_SENHA);// Entradas
+						 
+	input clk, EN, TEMP_INATI, EM_SENHA;
+	input [1:0] COD;
+	output INATIVO, CERTO, ERRO, S_INATI;
+	reg [2:0] state , nextstate;
+	
+	parameter S0 = 3'b000 ;
+	parameter S1 = 3'b001 ;
+	parameter S2 = 3'b010 ; 
+	parameter S3 = 3'b011 ; 
+	parameter S4 = 3'b100 ; 
+	parameter OK = 3'b101 ; 
+	parameter ER = 3'b110 ; 
+	parameter IN = 3'b111 ; 
+	
+	parameter senha1 = 2'b00;//b3 ou b0
+	parameter senha2 = 2'b10;//b1 ou b2
+	parameter senha3 = 2'b10;//b1 ou b2
+	parameter senha4 = 2'b00;//b3 ou b0
+
+	// Inicia o estado
+	
+	// Lóogica para mudança de estado
+	always @ ( posedge clk )
+		if (~EM_SENHA) state <= S0 ;
+		else state <= nextstate ;
+		
+	// Lógica para o próximo estado
+	always @ (*)
+		case ( state )
+			S0 : // V 
+				if ( EM_SENHA ) begin
+					nextstate = S1 ;
+				end
+				else begin
+					nextstate = S0 ;
+				end
+			//
+			S1 :  
+				if ( ~EM_SENHA ) begin
+					nextstate = S0 ;
+				end
+				else if (EM_SENHA & ~EN & ~TEMP_INATI) begin
+					nextstate = S1 ;
+				end
+				else if (EM_SENHA & ~EN & TEMP_INATI) begin
+					nextstate = IN ;
+				end
+				else if (EM_SENHA & EN & (COD == senha1)) begin
+					nextstate = S2 ;
+				end
+				else if (~EM_SENHA) begin
+					nextstate = S0 ;
+				end
+				else begin
+					nextstate = ER ;
+				end
+			//
+			S2 :  
+				if ( ~EM_SENHA ) begin
+					nextstate = S0 ;
+				end
+				else if (EM_SENHA & ~EN & ~TEMP_INATI) begin
+					nextstate = S2 ;
+				end
+				else if (EM_SENHA & ~EN & TEMP_INATI) begin
+					nextstate = IN ;
+				end
+				else if (EM_SENHA & EN & (COD == senha2)) begin
+					nextstate = S3 ;
+				end
+				else if (~EM_SENHA) begin
+					nextstate = S0 ;
+				end
+				else begin
+					nextstate = ER ;
+				end
+			//
+			S3 :  
+				if ( ~EM_SENHA ) begin
+					nextstate = S0 ;
+				end
+				else if (EM_SENHA & ~EN & ~TEMP_INATI) begin
+					nextstate = S3 ;
+				end
+				else if (EM_SENHA & ~EN & TEMP_INATI) begin
+					nextstate = IN ;
+				end
+				else if (EM_SENHA & EN & (COD == senha3)) begin
+					nextstate = S4 ;
+				end
+				else if (~EM_SENHA) begin
+					nextstate = S0 ;
+				end
+				else begin
+					nextstate = ER ;
+				end
+			//
+			S4 :  
+				if ( ~EM_SENHA ) begin
+					nextstate = S0 ;
+				end 
+				else if (EM_SENHA & ~EN & ~TEMP_INATI) begin
+					nextstate = S4 ;
+				end
+				else if (EM_SENHA & ~EN & TEMP_INATI) begin
+					nextstate = IN ;
+				end
+				else if (EM_SENHA & EN & (COD == senha4)) begin
+					nextstate = OK ;
+				end
+				else if (~EM_SENHA) begin
+					nextstate = S0 ;
+				end
+				else begin
+					nextstate = ER ;
+				end
+			//
+			OK :  //Posso mudar aqui para ficar igual o ER e IN tamb´em
+				if (EM_SENHA) begin
+					nextstate = OK; 
+				end
+				else begin
+					nextstate = S0;
+				end
+							//
+			ER :  
+				nextstate = S0 ;
+			//
+			IN :  
+				if (EM_SENHA) begin
+					nextstate = IN; 
+				end
+				else begin
+					nextstate = S0;
+				end
+			//
+			default : nextstate = S0 ;
+		endcase
+		
+	// Lógica para o pulso
+	assign INATIVO = ( state == IN ) ;//V
+	assign CERTO = ( state == OK ) ;//V
+	assign ERRO = ( state == ER ) ;//V
+	assign S_INATI = (state == S1) | (state == S2) | (state == S3) | (state == S4) ;//V
+endmodule

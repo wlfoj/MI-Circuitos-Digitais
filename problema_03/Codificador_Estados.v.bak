@@ -1,0 +1,22 @@
+/*
+Codifica os estados para serem usados no controle de um mux para determinar quais as letras que vão aparecer no display
+
+*/
+// Estudar a possibilidade de uma saída informando que está habilitado
+module Codificador_Estados(COD, ERRO, PARE, SIGA, CHEIO);
+
+	input ERRO, PARE, SIGA, CHEIO;
+	output [1:0] COD;// saídas codificadas
+	
+	assign COD[1]= (~SIGA) & (~CHEIO);
+	assign COD[0] = ((SIGA)&(~CHEIO))|((ERRO)&(~PARE));
+	
+
+endmodule
+
+/*
+00 - CHEIO
+01 - SIGA
+10 - PARE
+11 - ERRO
+*/

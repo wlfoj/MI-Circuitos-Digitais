@@ -1,0 +1,541 @@
+Timing Analyzer report for pbl2
+Fri Oct 28 14:57:39 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; pbl2                                                ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 135.89 MHz ; 135.89 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -6.359 ; -100.821      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.898 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                ;
++--------+------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.359 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.026      ;
+; -6.358 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.025      ;
+; -6.357 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.024      ;
+; -6.348 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.015      ;
+; -6.345 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.012      ;
+; -6.344 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.011      ;
+; -6.343 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.010      ;
+; -6.342 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.009      ;
+; -6.342 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.009      ;
+; -6.333 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.000      ;
+; -6.330 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.997      ;
+; -6.327 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.994      ;
+; -6.259 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.926      ;
+; -6.258 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.925      ;
+; -6.257 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.924      ;
+; -6.248 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.915      ;
+; -6.245 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.912      ;
+; -6.242 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.909      ;
+; -6.200 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.867      ;
+; -6.199 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.866      ;
+; -6.198 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.865      ;
+; -6.189 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.856      ;
+; -6.186 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.853      ;
+; -6.183 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.850      ;
+; -6.144 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.811      ;
+; -6.143 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.810      ;
+; -6.142 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.809      ;
+; -6.134 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.801      ;
+; -6.133 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.800      ;
+; -6.130 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.797      ;
+; -6.127 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.794      ;
+; -6.119 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.786      ;
+; -6.107 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.774      ;
+; -6.106 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.773      ;
+; -6.105 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.772      ;
+; -6.096 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.763      ;
+; -6.093 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.760      ;
+; -6.090 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.757      ;
+; -6.047 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.714      ;
+; -6.034 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.701      ;
+; -6.032 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.699      ;
+; -6.009 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.676      ;
+; -6.002 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.669      ;
+; -6.001 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.668      ;
+; -6.000 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.667      ;
+; -5.994 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.661      ;
+; -5.991 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.658      ;
+; -5.988 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.655      ;
+; -5.985 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.652      ;
+; -5.975 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.642      ;
+; -5.947 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.614      ;
+; -5.919 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.586      ;
+; -5.909 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.899 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.566      ;
+; -5.888 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.555      ;
+; -5.884 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.551      ;
+; -5.882 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.549      ;
+; -5.860 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.527      ;
+; -5.859 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.526      ;
+; -5.858 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.525      ;
+; -5.850 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.517      ;
+; -5.849 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.516      ;
+; -5.846 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.513      ;
+; -5.843 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.510      ;
+; -5.832 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.499      ;
+; -5.799 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.466      ;
+; -5.795 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.462      ;
+; -5.794 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.461      ;
+; -5.759 ; divisor:divisor_frequencia|Out[5]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.426      ;
+; -5.758 ; divisor:divisor_frequencia|Out[5]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.425      ;
+; -5.757 ; divisor:divisor_frequencia|Out[5]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.424      ;
+; -5.757 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.424      ;
+; -5.748 ; divisor:divisor_frequencia|Out[5]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.415      ;
+; -5.745 ; divisor:divisor_frequencia|Out[5]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.412      ;
+; -5.742 ; divisor:divisor_frequencia|Out[5]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.409      ;
+; -5.740 ; divisor:divisor_frequencia|Out[6]  ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.407      ;
+; -5.704 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.371      ;
+; -5.690 ; divisor:divisor_frequencia|Out[8]  ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.357      ;
+; -5.689 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.356      ;
+; -5.688 ; divisor:divisor_frequencia|Out[9]  ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.355      ;
+; -5.687 ; divisor:divisor_frequencia|Out[9]  ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.354      ;
+; -5.686 ; divisor:divisor_frequencia|Out[9]  ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.353      ;
+; -5.684 ; divisor:divisor_frequencia|Out[2]  ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.351      ;
+; -5.677 ; divisor:divisor_frequencia|Out[9]  ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.344      ;
+; -5.675 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.342      ;
+; -5.674 ; divisor:divisor_frequencia|Out[9]  ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.341      ;
+; -5.673 ; divisor:divisor_frequencia|Out[3]  ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.340      ;
+; -5.671 ; divisor:divisor_frequencia|Out[9]  ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.338      ;
+; -5.660 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.327      ;
+; -5.658 ; divisor:divisor_frequencia|Out[0]  ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.325      ;
+; -5.647 ; divisor:divisor_frequencia|Out[7]  ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.314      ;
+; -5.635 ; divisor:divisor_frequencia|Out[4]  ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.302      ;
+; -5.613 ; divisor:divisor_frequencia|Out[11] ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.280      ;
+; -5.612 ; divisor:divisor_frequencia|Out[11] ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.279      ;
+; -5.611 ; divisor:divisor_frequencia|Out[11] ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.278      ;
+; -5.604 ; divisor:divisor_frequencia|Out[1]  ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 1.000        ; 0.000      ; 6.271      ;
+; -5.602 ; divisor:divisor_frequencia|Out[11] ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.269      ;
+; -5.599 ; divisor:divisor_frequencia|Out[11] ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.266      ;
+; -5.596 ; divisor:divisor_frequencia|Out[11] ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.263      ;
+; -5.576 ; divisor:divisor_frequencia|Out[12] ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 6.243      ;
++--------+------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                     ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.898 ; divisor:divisor_frequencia|clock_div[1] ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
+; 2.243 ; divisor:divisor_frequencia|clock_div[0] ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.464      ;
+; 2.244 ; divisor:divisor_frequencia|clock_div[0] ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.465      ;
+; 3.132 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.353      ;
+; 3.272 ; divisor:divisor_frequencia|Out[9]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.493      ;
+; 3.357 ; divisor:divisor_frequencia|Out[4]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.578      ;
+; 3.400 ; divisor:divisor_frequencia|Out[5]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.621      ;
+; 4.133 ; divisor:divisor_frequencia|Out[9]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.354      ;
+; 4.164 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.385      ;
+; 4.177 ; divisor:divisor_frequencia|Out[0]       ; divisor:divisor_frequencia|Out[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.398      ;
+; 4.185 ; divisor:divisor_frequencia|Out[4]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.406      ;
+; 4.199 ; divisor:divisor_frequencia|Out[1]       ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.420      ;
+; 4.327 ; divisor:divisor_frequencia|Out[8]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.548      ;
+; 4.339 ; divisor:divisor_frequencia|Out[2]       ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.560      ;
+; 4.343 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.564      ;
+; 4.346 ; divisor:divisor_frequencia|Out[7]       ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.567      ;
+; 4.436 ; divisor:divisor_frequencia|Out[8]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.657      ;
+; 4.473 ; divisor:divisor_frequencia|Out[8]       ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.694      ;
+; 4.540 ; divisor:divisor_frequencia|Out[3]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.761      ;
+; 4.566 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.787      ;
+; 4.567 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.788      ;
+; 4.595 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.816      ;
+; 4.595 ; divisor:divisor_frequencia|Out[6]       ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.816      ;
+; 4.664 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.885      ;
+; 4.672 ; divisor:divisor_frequencia|Out[3]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.893      ;
+; 4.717 ; divisor:divisor_frequencia|Out[5]       ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.938      ;
+; 4.731 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.952      ;
+; 4.753 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.974      ;
+; 4.753 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 4.974      ;
+; 4.784 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.005      ;
+; 4.806 ; divisor:divisor_frequencia|Out[4]       ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.027      ;
+; 4.857 ; divisor:divisor_frequencia|Out[3]       ; divisor:divisor_frequencia|Out[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.078      ;
+; 4.872 ; divisor:divisor_frequencia|Out[5]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.093      ;
+; 4.874 ; divisor:divisor_frequencia|Out[5]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.095      ;
+; 4.890 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.111      ;
+; 4.891 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.112      ;
+; 4.895 ; divisor:divisor_frequencia|Out[5]       ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.116      ;
+; 4.918 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.139      ;
+; 4.918 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.139      ;
+; 4.919 ; divisor:divisor_frequencia|Out[2]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.140      ;
+; 4.939 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.160      ;
+; 4.940 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.161      ;
+; 4.940 ; divisor:divisor_frequencia|Out[2]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.161      ;
+; 4.942 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.163      ;
+; 4.944 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.165      ;
+; 4.947 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.168      ;
+; 4.949 ; divisor:divisor_frequencia|Out[14]      ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.170      ;
+; 4.961 ; divisor:divisor_frequencia|Out[4]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.182      ;
+; 4.962 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.183      ;
+; 4.963 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.184      ;
+; 4.963 ; divisor:divisor_frequencia|Out[4]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.184      ;
+; 4.968 ; divisor:divisor_frequencia|Out[0]       ; divisor:divisor_frequencia|Out[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.189      ;
+; 4.984 ; divisor:divisor_frequencia|Out[4]       ; divisor:divisor_frequencia|Out[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.205      ;
+; 4.986 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.207      ;
+; 4.987 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.208      ;
+; 5.021 ; divisor:divisor_frequencia|Out[1]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.242      ;
+; 5.042 ; divisor:divisor_frequencia|Out[1]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.263      ;
+; 5.077 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.298      ;
+; 5.077 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.298      ;
+; 5.089 ; divisor:divisor_frequencia|Out[9]       ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.310      ;
+; 5.094 ; divisor:divisor_frequencia|Out[0]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.315      ;
+; 5.104 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.325      ;
+; 5.105 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.326      ;
+; 5.105 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.326      ;
+; 5.107 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.109 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.330      ;
+; 5.114 ; divisor:divisor_frequencia|Out[10]      ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.335      ;
+; 5.115 ; divisor:divisor_frequencia|Out[0]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.336      ;
+; 5.149 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.370      ;
+; 5.149 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.370      ;
+; 5.169 ; divisor:divisor_frequencia|Out[6]       ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.390      ;
+; 5.173 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.394      ;
+; 5.173 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.394      ;
+; 5.184 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.405      ;
+; 5.207 ; divisor:divisor_frequencia|Out[1]       ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.428      ;
+; 5.223 ; divisor:divisor_frequencia|Out[9]       ; divisor:divisor_frequencia|Out[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.444      ;
+; 5.223 ; divisor:divisor_frequencia|Out[9]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.444      ;
+; 5.248 ; divisor:divisor_frequencia|Out[7]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.469      ;
+; 5.250 ; divisor:divisor_frequencia|Out[7]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.471      ;
+; 5.264 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.485      ;
+; 5.266 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.487      ;
+; 5.268 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[12]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.489      ;
+; 5.271 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.492      ;
+; 5.273 ; divisor:divisor_frequencia|Out[13]      ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.494      ;
+; 5.280 ; divisor:divisor_frequencia|Out[0]       ; divisor:divisor_frequencia|Out[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.501      ;
+; 5.285 ; divisor:divisor_frequencia|Out[2]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.506      ;
+; 5.287 ; divisor:divisor_frequencia|Out[2]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.508      ;
+; 5.293 ; divisor:divisor_frequencia|Out[3]       ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.514      ;
+; 5.304 ; divisor:divisor_frequencia|Out[5]       ; divisor:divisor_frequencia|Out[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.525      ;
+; 5.324 ; divisor:divisor_frequencia|Out[6]       ; divisor:divisor_frequencia|Out[10]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.545      ;
+; 5.326 ; divisor:divisor_frequencia|Out[6]       ; divisor:divisor_frequencia|Out[9]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.547      ;
+; 5.335 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.556      ;
+; 5.336 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.557      ;
+; 5.336 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[14]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.557      ;
+; 5.338 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|clock_div[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.559      ;
+; 5.339 ; divisor:divisor_frequencia|Out[2]       ; divisor:divisor_frequencia|Out[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.560      ;
+; 5.343 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[11]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.564      ;
+; 5.345 ; divisor:divisor_frequencia|Out[12]      ; divisor:divisor_frequencia|Out[8]       ; clk          ; clk         ; 0.000        ; 0.000      ; 5.566      ;
+; 5.359 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|Out[13]      ; clk          ; clk         ; 0.000        ; 0.000      ; 5.580      ;
+; 5.360 ; divisor:divisor_frequencia|Out[11]      ; divisor:divisor_frequencia|clock_div[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 5.581      ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 666      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 666      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 8     ; 8    ;
+; Unconstrained Input Port Paths  ; 64    ; 64   ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 98    ; 98   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; CH[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; A           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; C           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Col[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Col[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; E           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; F           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; G           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; CH[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; CH[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; A           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; B           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; C           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Col[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Col[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; D           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Display[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; E           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; F           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; G           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Rows[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Oct 28 14:57:39 2022
+Info: Command: quartus_sta pbl2 -c pbl2
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pbl2.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.359
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.359            -100.821 clk 
+Info (332146): Worst-case hold slack is 1.898
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.898               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 343 megabytes
+    Info: Processing ended: Fri Oct 28 14:57:39 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

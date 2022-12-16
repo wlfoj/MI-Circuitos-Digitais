@@ -1,0 +1,4 @@
+module module_main(LED_G, LED_B, LED_R,A, B, C, D, E, F, G, P, Input_D, Input_R);
+
+	
+endmodule

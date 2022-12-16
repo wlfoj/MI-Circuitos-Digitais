@@ -1,0 +1,386 @@
+|main
+Digitos[0] <= Turn_On_Digit:hh.port0
+Digitos[1] <= Turn_On_Digit:hh.port0
+Digitos[2] <= Turn_On_Digit:hh.port0
+Digitos[3] <= Turn_On_Digit:hh.port0
+Segmentos[0] <= Decodificador_Segmentos:decoder1.port0
+Segmentos[1] <= Decodificador_Segmentos:decoder1.port0
+Segmentos[2] <= Decodificador_Segmentos:decoder1.port0
+Segmentos[3] <= Decodificador_Segmentos:decoder1.port0
+Segmentos[4] <= Decodificador_Segmentos:decoder1.port0
+Segmentos[5] <= Decodificador_Segmentos:decoder1.port0
+Segmentos[6] <= Decodificador_Segmentos:decoder1.port0
+RGB[0] <= Controller_RGB:controller1.port1
+RGB[1] <= Controller_RGB:controller1.port0
+RGB[2] <= Controller_RGB:controller1.port2
+Cancela <= Controller_Cancela:controller2.port0
+CLK_FPGA => CLK_FPGA.IN3
+Si => Si.IN1
+Se => Se.IN1
+Sc => Sc.IN1
+Btn[0] => _.IN1
+Btn[1] => _.IN1
+Btn[2] => _.IN1
+Btn[3] => _.IN1
+DIGITE_SENHA <= EM_SENHA.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Primeiro_Divisor:divisor_c
+CLK_2 <= Out[20].DB_MAX_OUTPUT_PORT_TYPE
+CLK_FPGA => Out[0].CLK
+CLK_FPGA => Out[1].CLK
+CLK_FPGA => Out[2].CLK
+CLK_FPGA => Out[3].CLK
+CLK_FPGA => Out[4].CLK
+CLK_FPGA => Out[5].CLK
+CLK_FPGA => Out[6].CLK
+CLK_FPGA => Out[7].CLK
+CLK_FPGA => Out[8].CLK
+CLK_FPGA => Out[9].CLK
+CLK_FPGA => Out[10].CLK
+CLK_FPGA => Out[11].CLK
+CLK_FPGA => Out[12].CLK
+CLK_FPGA => Out[13].CLK
+CLK_FPGA => Out[14].CLK
+CLK_FPGA => Out[15].CLK
+CLK_FPGA => Out[16].CLK
+CLK_FPGA => Out[17].CLK
+CLK_FPGA => Out[18].CLK
+CLK_FPGA => Out[19].CLK
+CLK_FPGA => Out[20].CLK
+
+
+|main|LevelToPulseMoore:l0
+CLK_FPGA => state~1.DATAIN
+Btn => nextstate.B.DATAB
+Btn => Selector0.IN1
+Btn => state.A.DATAIN
+Pulse <= Pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|LevelToPulseMoore:l1
+CLK_FPGA => state~1.DATAIN
+Btn => nextstate.B.DATAB
+Btn => Selector0.IN1
+Btn => state.A.DATAIN
+Pulse <= Pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|LevelToPulseMoore:l2
+CLK_FPGA => state~1.DATAIN
+Btn => nextstate.B.DATAB
+Btn => Selector0.IN1
+Btn => state.A.DATAIN
+Pulse <= Pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|LevelToPulseMoore:l3
+CLK_FPGA => state~1.DATAIN
+Btn => nextstate.B.DATAB
+Btn => Selector0.IN1
+Btn => state.A.DATAIN
+Pulse <= Pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Codificador_Botoes:codificador1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+EN <= EN.DB_MAX_OUTPUT_PORT_TYPE
+B[0] => EN.IN0
+B[0] => EN.IN0
+B[0] => EN.IN0
+B[1] => EN.IN1
+B[1] => S.IN0
+B[1] => EN.IN1
+B[1] => EN.IN1
+B[2] => EN.IN1
+B[2] => S.IN0
+B[2] => EN.IN1
+B[2] => EN.IN1
+B[2] => EN.IN1
+B[3] => EN.IN1
+B[3] => S.IN1
+B[3] => S.IN1
+B[3] => EN.IN1
+B[3] => EN.IN1
+B[3] => EN.IN1
+
+
+|main|MEF_Principal_DEBUG:mef1
+STERRO <= STERRO.DB_MAX_OUTPUT_PORT_TYPE
+STSTOP <= STSTOP.DB_MAX_OUTPUT_PORT_TYPE
+STGO <= STGO.DB_MAX_OUTPUT_PORT_TYPE
+STFULL <= STFULL.DB_MAX_OUTPUT_PORT_TYPE
+IN_PASW <= IN_PASW.DB_MAX_OUTPUT_PORT_TYPE
+clk => state~1.DATAIN
+Si => always1.IN0
+Si => always1.IN0
+Si => always1.IN0
+Se => always1.IN0
+Se => always1.IN1
+Se => always1.IN1
+Se => always1.IN0
+Se => always1.IN1
+Sc => nextstate.DATAA
+Sc => Selector5.IN5
+Sc => nextstate.DATAA
+Sc => always1.IN1
+Sc => always1.IN1
+Sc => always1.IN0
+Sc => nextstate.DATAA
+Sc => Selector0.IN1
+Sc => nextstate.DATAA
+IN => always1.IN1
+ERRO => always1.IN1
+ERRO => always1.IN1
+OK => always1.IN1
+OK => always1.IN1
+OK => always1.IN1
+OK => always1.IN1
+
+
+|main|MEF_Senha_DEBUG:mef2
+INATIVO <= INATIVO.DB_MAX_OUTPUT_PORT_TYPE
+CERTO <= CERTO.DB_MAX_OUTPUT_PORT_TYPE
+ERRO <= ERRO.DB_MAX_OUTPUT_PORT_TYPE
+S_INATI <= S_INATI.DB_MAX_OUTPUT_PORT_TYPE
+clk => state~1.DATAIN
+COD[0] => Equal0.IN1
+COD[0] => Equal1.IN1
+COD[1] => Equal0.IN0
+COD[1] => Equal1.IN0
+EN => always1.IN0
+EN => always1.IN0
+TEMP_INATI => always1.IN1
+TEMP_INATI => always1.IN1
+EM_SENHA => always1.IN1
+EM_SENHA => always1.IN1
+EM_SENHA => Selector1.IN3
+EM_SENHA => nextstate.DATAA
+EM_SENHA => nextstate.DATAA
+EM_SENHA => Selector5.IN3
+EM_SENHA => Selector7.IN6
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => nextstate.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => state.OUTPUTSELECT
+EM_SENHA => Selector0.IN1
+EM_SENHA => nextstate.DATAA
+EM_SENHA => nextstate.DATAA
+EM_SENHA => Selector0.IN2
+EM_SENHA => Selector0.IN3
+
+
+|main|Controller_RGB:controller1
+LED_G <= GO.DB_MAX_OUTPUT_PORT_TYPE
+LED_R <= ERRO.DB_MAX_OUTPUT_PORT_TYPE
+LED_B <= LED_B.DB_MAX_OUTPUT_PORT_TYPE
+clk_1hz => LED_B.IN0
+GO => LED_G.DATAIN
+ERRO => LED_R.DATAIN
+STOP => LED_B.IN1
+
+
+|main|Controller_Cancela:controller2
+Cancela <= GO.DB_MAX_OUTPUT_PORT_TYPE
+GO => Cancela.DATAIN
+
+
+|main|Codificador_Estados:codificador2
+COD[0] <= COD.DB_MAX_OUTPUT_PORT_TYPE
+COD[1] <= COD.DB_MAX_OUTPUT_PORT_TYPE
+ERRO => COD.IN0
+PARE => COD.IN1
+SIGA => COD.IN0
+SIGA => COD.IN0
+CHEIO => COD.IN1
+CHEIO => COD.IN1
+
+
+|main|Divisor_Frequencia:divisor_freq
+clock_div[0] <= clock_div[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_div[1] <= clock_div[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock => clock_div[0]~reg0.CLK
+clock => clock_div[1]~reg0.CLK
+clock => Out[0].CLK
+clock => Out[1].CLK
+clock => Out[2].CLK
+clock => Out[3].CLK
+clock => Out[4].CLK
+clock => Out[5].CLK
+clock => Out[6].CLK
+clock => Out[7].CLK
+clock => Out[8].CLK
+clock => Out[9].CLK
+clock => Out[10].CLK
+clock => Out[11].CLK
+clock => Out[12].CLK
+clock => Out[13].CLK
+clock => Out[14].CLK
+clock => Out[15].CLK
+
+
+|main|Divisor_Frequencia_1Hz:divisor_1hz
+clock_div <= Out[25].DB_MAX_OUTPUT_PORT_TYPE
+clock => Out[0].CLK
+clock => Out[1].CLK
+clock => Out[2].CLK
+clock => Out[3].CLK
+clock => Out[4].CLK
+clock => Out[5].CLK
+clock => Out[6].CLK
+clock => Out[7].CLK
+clock => Out[8].CLK
+clock => Out[9].CLK
+clock => Out[10].CLK
+clock => Out[11].CLK
+clock => Out[12].CLK
+clock => Out[13].CLK
+clock => Out[14].CLK
+clock => Out[15].CLK
+clock => Out[16].CLK
+clock => Out[17].CLK
+clock => Out[18].CLK
+clock => Out[19].CLK
+clock => Out[20].CLK
+clock => Out[21].CLK
+clock => Out[22].CLK
+clock => Out[23].CLK
+clock => Out[24].CLK
+clock => Out[25].CLK
+EN => always0.IN0
+out_princ_pare => always0.IN1
+
+
+|main|Temporizador_20s:timer
+pulse_20s <= pulse_20s~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock => count[0].CLK
+clock => count[1].CLK
+clock => count[2].CLK
+clock => count[3].CLK
+clock => count[4].CLK
+clock => count[5].CLK
+clock => count[6].CLK
+clock => count[7].CLK
+clock => count[8].CLK
+clock => count[9].CLK
+clock => pulse_20s~reg0.CLK
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => count.OUTPUTSELECT
+EN => pulse_20s.OUTPUTSELECT
+
+
+|main|Decodificador_Segmentos:decoder1
+Segmentos[0] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+Segmentos[1] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+Segmentos[2] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+Segmentos[3] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+Segmentos[4] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+Segmentos[5] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+Segmentos[6] <= Segmentos.DB_MAX_OUTPUT_PORT_TYPE
+ST[0] => Segmentos.IN0
+ST[0] => Segmentos.IN0
+ST[0] => Segmentos.IN0
+ST[0] => Segmentos.IN0
+ST[0] => Segmentos.IN0
+ST[1] => Segmentos.IN1
+ST[1] => Segmentos.IN0
+ST[1] => Segmentos.IN1
+ST[1] => Segmentos.IN0
+ST[1] => Segmentos.IN1
+ST[1] => Segmentos.IN1
+ST[1] => Segmentos.IN0
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[0] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+FREQ[1] => Segmentos.IN1
+
+
+|main|On_Display:on_off_display
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+GO => Out.IN0
+GO => Out.IN0
+GO => Out.IN0
+ERRO => Out.IN1
+ERRO => Out.IN1
+ERRO => Out.IN1
+STOP => Out.IN1
+STOP => Out.IN1
+STOP => Out.IN1
+STOP => Out.IN1
+FULL => Out.IN1
+FULL => Out.IN1
+FULL => Out.IN1
+FULL => Out.IN1
+
+
+|main|Scheduler:escalonador_digito
+Out[0] <= And0.DB_MAX_OUTPUT_PORT_TYPE
+Out[1] <= And1.DB_MAX_OUTPUT_PORT_TYPE
+Out[2] <= And2.DB_MAX_OUTPUT_PORT_TYPE
+Out[3] <= And3.DB_MAX_OUTPUT_PORT_TYPE
+In[0] => And1.IN0
+In[0] => And3.IN0
+In[0] => And0.IN0
+In[0] => And2.IN0
+In[1] => And2.IN1
+In[1] => And3.IN1
+In[1] => And0.IN1
+In[1] => And1.IN1
+
+
+|main|Turn_On_Digit:hh
+digit[0] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+digit[1] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+digit[2] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+digit[3] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+indicador[0] => digit.IN0
+indicador[1] => digit.IN0
+indicador[2] => digit.IN0
+indicador[3] => digit.IN0
+ON => digit.IN1
+ON => digit.IN1
+ON => digit.IN1
+ON => digit.IN1
+
+

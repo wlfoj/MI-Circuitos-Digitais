@@ -1,0 +1,16 @@
+/*
+	Módulo sair as vagas livres
+*/
+module empty(CH, S);
+	input [7:0] CH;// qualquer entrada
+	output [3:0] S;// 4 digitos do display
+   
+	wire [2:0] occ1, occ2;
+	wire Low;
+	
+	convert_occupations circuito01(.Qtd(occ1), .In(CH[3:0]));
+	convert_occupations circuito02(.Qtd(occ2), .In(CH[7:4]));
+
+	// Somador 3 bits
+  
+endmodule

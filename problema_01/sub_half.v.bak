@@ -1,0 +1,8 @@
+module sub_half(Out, Carry, A, B);
+	input A, B;
+	output Out, Carry;
+	wire A_Inv;
+	not Inv0(A_inv, A);
+	and And0(Carry, A_Inv, B);
+	xor Xor0(Out, A, B);
+endmodule

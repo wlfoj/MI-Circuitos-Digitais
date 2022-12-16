@@ -1,0 +1,8 @@
+module main( A, B, C, D, E, F, G, P, Display, Rows, Col, CH);
+	input [7:0] CH;// Chaves
+	output A, B, C, D, E, F, G, P;// Segmentos do display
+	output [3:0] Display;// Cada digito do display
+	output [3:0] Rows;// cada linha da matriz
+	output [1:0] Col;// cada coluna da matriz
+
+endmodule

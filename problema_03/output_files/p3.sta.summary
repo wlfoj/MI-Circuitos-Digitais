@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'Primeiro_Divisor:divisor_c|Out[20]'
+Slack : -8.276
+TNS   : -159.923
+
+Type  : Setup 'CLK_FPGA'
+Slack : -7.121
+TNS   : -360.514
+
+Type  : Hold 'CLK_FPGA'
+Slack : -2.065
+TNS   : -2.065
+
+Type  : Hold 'Primeiro_Divisor:divisor_c|Out[20]'
+Slack : 1.641
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK_FPGA'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Primeiro_Divisor:divisor_c|Out[20]'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

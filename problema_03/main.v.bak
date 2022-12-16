@@ -1,0 +1,2 @@
+module MEF_Principal_DEBUG ( Digitos, Segmentos, RGB, CLK_FPGA, Si, Se, Sc);
+endmodule

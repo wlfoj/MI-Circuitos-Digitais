@@ -1,0 +1,16 @@
+module sum3bit(S, A, B, Cout);
+    input [0:3] A, B;
+    output [0:3] S;
+    output Cout;
+ 
+    wire T1, T2, T3, Low;
+    
+	 // Sempre 0 pro cin
+	 not Inv1(A1_Inv, A[1]);
+	 and And1(Low, A1_Inv, A[1]); 
+	 
+    somador circuit01(.S(S[0]), .Cout(T1), .A(A[0]), .B(B[0]), .Cin(Low));
+    somador circuit02(.S(S[1]), .Cout(T2), .A(A[1]), .B(B[1]), .Cin(T1));
+    somador circuit03(.S(S[2]), .Cout(T3), .A(A[2]), .B(B[2]), .Cin(T2));
+    somador circuit04(.S(S[3]), .Cout(Cout), .A(A[3]), .B(B[3]), .Cin(T3));
+endmodule
